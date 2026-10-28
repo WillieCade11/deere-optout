@@ -1,0 +1,49 @@
+:root {
+  --green: #1F4D2E;
+  --green50: #8FA696;
+  --tint: #EEF3EC;
+  --gold: #E0A526;
+  --yellow: #FBE38B;
+  --ink: #1A1A17;
+  --muted: #4A4840;
+  --paper: #FFFFFF;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Calibri, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+}
+.wrap { max-width: 720px; margin: 0 auto; padding: 0 16px; }
+header.band { background: var(--green50); padding: 20px 0; }
+header.band .wrap { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+header.band img { width: 96px; height: auto; background: #fff; border-radius: 6px; padding: 6px; }
+header.band .titles { flex: 1 1 260px; }
+.kicker { margin: 0; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #1F3326; }
+h1 { margin: 2px 0 4px; font-family: Georgia, "Times New Roman", serif; font-size: 30px; line-height: 1.15; color: #10251A; }
+.sub { margin: 0; font-weight: 700; color: #1F3326; }
+.deadline {
+  margin: 20px 0 8px; background: var(--gold); border-radius: 10px; padding: 14px 18px;
+  font-size: 20px; font-weight: 700; text-align: center;
+}
+h2 { font-family: Georgia, "Times New Roman", serif; color: var(--green); font-size: 23px; margin: 28px 0 10px; }
+.buttons { display: grid; gap: 12px; }
+a.btn {
+  display: block; min-height: 56px; padding: 14px 18px; border-radius: 10px;
+  background: var(--green); color: #fff; text-decoration: none; font-size: 19px; font-weight: 700;
+}
+a.btn span { display: block; font-size: 15px; font-weight: 400; color: #E4ECE3; margin-top: 2px; }
+a.btn:hover, a.btn:focus { background: #14331E; }
+a.btn:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+.box { background: var(--tint); border-radius: 10px; padding: 14px 18px; margin: 12px 0; }
+.address { font-weight: 700; line-height: 1.4; }
+.donothing { background: var(--yellow); border-radius: 10px; padding: 14px 18px; margin: 20px 0; }
+a { color: var(--green); }
+footer { margin-top: 32px; background: #F2F0EA; border-top: 3px solid var(--gold); padding: 18px 0 28px; font-size: 16px; }
+footer p { margin: 6px 0; }
+.small { font-size: 14px; color: var(--muted); }
+.center { text-align: center; }

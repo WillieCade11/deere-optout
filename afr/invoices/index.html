@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Get Your Dealer Repair Records | Deere Repair Settlement</title>
+<link rel="stylesheet" href="../../style.css">
+<script>
+  // Count this QR scan, then open the PDF.
+  window.goatcounter = { no_onload: true };
+  var target = "../dealer-invoice-help.pdf";
+  var sent = false;
+  function go() { if (!sent) { sent = true; window.location.replace(target); } }
+  function counted() {
+    try { window.goatcounter.count({ path: "/afr/invoices/", title: "QR scan: Get Your Dealer Repair Records" }); } catch (e) {}
+    setTimeout(go, 700);
+  }
+  setTimeout(go, 3000); // fallback if the counter is blocked or slow
+</script>
+<script data-goatcounter="https://deere-optout.goatcounter.com/count" async src="https://gc.zgo.at/count.js" onload="counted()" onerror="go()"></script>
+</head>
+<body>
+<main class="wrap center">
+  <h1 style="margin-top:32px">Get Your Dealer Repair Records</h1>
+  <p>Opening your document now.</p>
+  <p><a class="btn" href="../dealer-invoice-help.pdf">Download now</a></p>
+  <p><a href="../">See all opt-out documents</a></p>
+  <p class="small"><strong>This is not legal advice.</strong> Opt-out deadline: postmarked by December 4, 2026.</p>
+</main>
+</body>
+</html>
