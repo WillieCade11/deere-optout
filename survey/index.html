@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deere Settlement Grower Survey</title>
+<meta name="description" content="Four quick questions for growers about the Deere repair settlement notice. Anonymous. About one minute.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://williecade11.github.io/deere-optout/survey/">
+<meta property="og:title" content="Deere Settlement Grower Survey">
+<meta property="og:description" content="Did you get a notice about the Deere repair settlement? Four quick questions. Anonymous.">
+<link rel="stylesheet" href="../style.css">
+<style>
+  .q { background: var(--tint); border-radius: 10px; padding: 14px 16px 10px; margin: 16px 0; border: 0; }
+  .q legend { font-weight: 700; font-size: 19px; padding: 0; margin-bottom: 8px; float: left; width: 100%; }
+  .q legend + * { clear: both; }
+  .num { display: inline-block; min-width: 1.6em; color: var(--green); }
+  .opt { display: flex; align-items: center; gap: 12px; min-height: 48px; padding: 6px 12px; margin: 6px 0;
+         background: #fff; border: 2px solid #D5DED3; border-radius: 8px; cursor: pointer; font-size: 18px; }
+  .opt input { width: 22px; height: 22px; accent-color: var(--green); flex: none; margin: 0; }
+  .opt:has(input:checked) { border-color: var(--green); background: #F7FAF6; font-weight: 700; }
+  .q.missing { outline: 3px solid #B3261E; }
+  .err { color: #B3261E; font-weight: 700; display: none; margin: 4px 0 0; }
+  .q.missing .err { display: block; }
+  select { width: 100%; min-height: 48px; font-size: 18px; padding: 8px; border-radius: 8px; border: 2px solid #D5DED3; background: #fff; color: var(--ink); }
+  sup a { text-decoration: none; font-weight: 700; padding: 0 2px; }
+  button.btn { display: block; width: 100%; min-height: 56px; border: 0; border-radius: 10px; background: var(--green);
+               color: #fff; font: inherit; font-size: 20px; font-weight: 700; cursor: pointer; margin: 20px 0 8px; }
+  button.btn:disabled { opacity: 0.6; cursor: wait; }
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .notes { font-size: 15px; color: var(--muted); }
+  .notes li { margin: 6px 0; }
+  .notes li:target { background: var(--yellow); }
+  .qrgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; }
+  .qrcard { background: var(--tint); border-radius: 10px; padding: 12px; text-align: center; }
+  .qrcard img { width: 100%; max-width: 200px; height: auto; background: #fff; border-radius: 6px; }
+  .qrcard p { margin: 6px 0 0; }
+  #thanks { display: none; }
+  #thanks.show { display: block; }
+  .msg { border-radius: 10px; padding: 14px 18px; margin: 14px 0; }
+  .msg.ok { background: #DDEBD9; }
+  .msg.bad { background: #F9DEDC; }
+</style>
+<script data-goatcounter="https://deere-optout.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script src="config.js"></script>
+</head>
+<body>
+<header class="band">
+  <div class="wrap">
+    <div class="titles">
+      <p class="kicker">Deere Repair Settlement</p>
+      <h1>Grower Survey</h1>
+      <p class="sub">Four quick questions. About one minute. Anonymous.</p>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <p>Thank you for helping! Your answers show whether growers are actually receiving notice of the Deere repair settlement. We do not ask for your name, phone, or email.</p>
+
+  <form id="survey" novalidate>
+    <fieldset class="q" id="q1">
+      <legend><span class="num">1.</span>During the Class Period<sup><a href="#n1" aria-label="Note 1">1</a></sup>, how many pieces of Large John Deere equipment<sup><a href="#n2" aria-label="Note 2">2</a></sup> did you own?</legend>
+      <label class="opt"><input type="radio" name="q1" value="None"> None</label>
+      <label class="opt"><input type="radio" name="q1" value="1 to 5"> 1 to 5</label>
+      <label class="opt"><input type="radio" name="q1" value="6 to 9"> 6 to 9</label>
+      <label class="opt"><input type="radio" name="q1" value="10 or more"> 10 or more</label>
+      <p class="err">Please choose one answer.</p>
+    </fieldset>
+
+    <fieldset class="q" id="q2">
+      <legend><span class="num">2.</span>Did you receive a settlement notice<sup><a href="#n3" aria-label="Note 3">3</a></sup> by postcard or email?</legend>
+      <label class="opt"><input type="radio" name="q2" value="Yes, postcard"> Yes, a postcard</label>
+      <label class="opt"><input type="radio" name="q2" value="Yes, email"> Yes, an email</label>
+      <label class="opt"><input type="radio" name="q2" value="Yes, both"> Yes, both</label>
+      <label class="opt"><input type="radio" name="q2" value="No"> No</label>
+      <label class="opt"><input type="radio" name="q2" value="Not sure"> Not sure</label>
+      <p class="err">Please choose one answer.</p>
+    </fieldset>
+
+    <fieldset class="q" id="q3">
+      <legend><span class="num">3.</span>During the Class Period<sup><a href="#n1" aria-label="Note 1">1</a></sup>, did a Deere dealer<sup><a href="#n4" aria-label="Note 4">4</a></sup> service<sup><a href="#n5" aria-label="Note 5">5</a></sup> your equipment?</legend>
+      <label class="opt"><input type="radio" name="q3" value="Yes"> Yes</label>
+      <label class="opt"><input type="radio" name="q3" value="No"> No</label>
+      <label class="opt"><input type="radio" name="q3" value="Not sure"> Not sure</label>
+      <p class="err">Please choose one answer.</p>
+    </fieldset>
+
+    <fieldset class="q" id="q4">
+      <legend><span class="num">4.</span>Do you own other Deere equipment with an ECU<sup><a href="#n6" aria-label="Note 6">6</a></sup> not counted above?</legend>
+      <label class="opt"><input type="radio" name="q4" value="Yes"> Yes</label>
+      <label class="opt"><input type="radio" name="q4" value="No"> No</label>
+      <label class="opt"><input type="radio" name="q4" value="Not sure"> Not sure</label>
+      <p class="err">Please choose one answer.</p>
+    </fieldset>
+
+    <div class="q">
+      <label for="state" style="font-weight:700;display:block;margin-bottom:8px">Your state (optional)</label>
+      <select id="state" name="state">
+        <option value="">Prefer not to say</option>
+      </select>
+    </div>
+
+    <div class="hp" aria-hidden="true">
+      <label>Leave this empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+    </div>
+
+    <button type="submit" class="btn" id="submitBtn">Submit my answers</button>
+    <p class="small center">One response per farm or business, please.</p>
+  </form>
+
+  <div id="status" role="status" aria-live="polite"></div>
+
+  <section id="thanks">
+    <div class="msg ok"><strong>Thank you!</strong> Your answers were received.</div>
+    <div class="donothing"><strong>Deadline: December 4, 2026.</strong> If you paid a Deere dealer to service large equipment between Jan 10, 2018 and May 18, 2026, you are in the class whether or not you got a notice. If you do nothing, you stay in the settlement and give up your right to sue Deere.</div>
+  </section>
+
+  <h2>Opt-out information from American Farmers and Ranchers</h2>
+  <p>Scan a code, or tap it on your phone. Share these with neighbors.</p>
+  <div class="qrgrid">
+    <a class="qrcard" href="../afr/faq/" data-goatcounter-click="survey-afr-faq" data-goatcounter-title="Survey: AFR FAQ">
+      <img src="qr-afr-faq.png" alt="QR code for the AFR Opt-Out FAQ" width="200" height="200">
+      <p><strong>Opt-Out FAQ</strong></p>
+    </a>
+    <a class="qrcard" href="../afr/letter/" data-goatcounter-click="survey-afr-letter" data-goatcounter-title="Survey: AFR letter">
+      <img src="qr-afr-letter.png" alt="QR code for the AFR sample opt-out letter" width="200" height="200">
+      <p><strong>Sample Opt-Out Letter</strong></p>
+    </a>
+    <a class="qrcard" href="../afr/invoices/" data-goatcounter-click="survey-afr-invoices" data-goatcounter-title="Survey: AFR invoices">
+      <img src="qr-afr-invoices.png" alt="QR code for help getting your dealer repair records" width="200" height="200">
+      <p><strong>Get Your Dealer Repair Records</strong></p>
+    </a>
+  </div>
+
+  <h2>Notes</h2>
+  <ol class="notes">
+    <li id="n1"><strong>Class Period:</strong> January 10, 2018 through May 18, 2026. (Long Form Notice, Q5)</li>
+    <li id="n2"><strong>Large John Deere equipment</strong> means "Deere Large Agricultural Equipment": "agricultural equipment manufactured by John Deere, which depend for their functioning, in part, on electronic control units ("ECUs") and which include large and medium tractors (all 6000, 7000, 8000, and 9000 Series models); combines; cotton pickers; cotton strippers; sugarcane harvesters; tillage, seeding (including planters), and application equipment and sprayers." (Long Form Notice, Q5)</li>
+    <li id="n3"><strong>Settlement notice:</strong> Class members found in Deere's records "will receive by mail or email a notice" from the Settlement Administrator with a Notice ID and Confirmation Code. (Long Form Notice, Q9)</li>
+    <li id="n4"><strong>Deere dealer:</strong> The class covers repair services bought "from John Deere or its authorized Dealers in the United States." The settlement does not define "Dealer" further. (Long Form Notice, Q5)</li>
+    <li id="n5"><strong>Service</strong> means "Repair Services": "the diagnosis, maintenance, and/or repair of any Deere Large Agricultural Equipment." (Long Form Notice, Q5)</li>
+    <li id="n6"><strong>ECU:</strong> "electronic control units ("ECUs")." The settlement gives no further definition. In plain terms, an ECU is an onboard computer that controls the engine or other systems. Examples of equipment not counted above may include 5 Series and smaller tractors, Gators, and mowers.</li>
+  </ol>
+
+  <h2>Official information</h2>
+  <p>Settlement website: <a href="https://www.deererepairsettlement.com">DeereRepairSettlement.com</a><br>Settlement Administrator: <a href="tel:18446444294">1-844-644-4294</a></p>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong>This is not legal advice.</strong> This survey is not part of the official settlement and does not opt you out or file a claim.</p>
+    <p><strong>Questions?</strong> Willie Cade, Graceful Solutions LLC<br><a href="mailto:willie@graceful.solutions">willie@graceful.solutions</a> | <a href="tel:17735623377">773-562-3377</a></p>
+    <p class="small">Definitions quoted from the Long Form Notice, In re: Deere &amp; Company Repair Services Antitrust Litigation, Case No. 3:22-cv-50188 (N.D. Ill.). Survey version <span id="ver"></span>.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var cfg = window.SURVEY_CONFIG || {};
+  document.getElementById("ver").textContent = cfg.VERSION || "";
+
+  var states = ["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming","Puerto Rico","Other U.S. territory"];
+  var sel = document.getElementById("state");
+  states.forEach(function (s) { var o = document.createElement("option"); o.value = s; o.textContent = s; sel.appendChild(o); });
+
+  // Where the person came from, e.g. survey/?src=afr-flyer
+  var src = "";
+  try { src = (new URLSearchParams(location.search).get("src") || "").slice(0, 40); } catch (e) {}
+
+  var form = document.getElementById("survey");
+  var statusBox = document.getElementById("status");
+  var btn = document.getElementById("submitBtn");
+
+  form.addEventListener("change", function (e) {
+    var fs = e.target.closest("fieldset");
+    if (fs) fs.classList.remove("missing");
+  });
+
+  function showThanks() {
+    form.style.display = "none";
+    statusBox.innerHTML = "";
+    document.getElementById("thanks").classList.add("show");
+    window.scrollTo(0, 0);
+  }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var data = { src: src, version: cfg.VERSION || "" };
+    var first = null;
+    ["q1", "q2", "q3", "q4"].forEach(function (q) {
+      var c = form.querySelector('input[name="' + q + '"]:checked');
+      var fs = document.getElementById(q);
+      if (!c) { fs.classList.add("missing"); if (!first) first = fs; }
+      else { data[q] = c.value; }
+    });
+    if (first) { first.scrollIntoView({ behavior: "smooth", block: "center" }); return; }
+    data.state = sel.value;
+    data.website = form.website.value; // spam trap, should be empty
+
+    if (!cfg.SCRIPT_URL) {
+      statusBox.innerHTML = '<div class="msg bad">The survey is not connected yet. Please try again later.</div>';
+      return;
+    }
+    btn.disabled = true;
+    btn.textContent = "Sending...";
+    // text/plain avoids a browser pre-check that Google Apps Script does not answer.
+    fetch(cfg.SCRIPT_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      body: JSON.stringify(data)
+    }).then(function () {
+      try { localStorage.setItem("deereSurveyDone", "1"); } catch (err) {}
+      try { window.goatcounter.count({ path: "/survey/submitted", title: "Survey submitted", event: true }); } catch (err) {}
+      showThanks();
+    }).catch(function () {
+      btn.disabled = false;
+      btn.textContent = "Submit my answers";
+      statusBox.innerHTML = '<div class="msg bad">We could not send your answers. Please check your signal and tap Submit again.</div>';
+    });
+  });
+
+  try {
+    if (localStorage.getItem("deereSurveyDone") === "1") {
+      statusBox.innerHTML = '<div class="msg ok">It looks like you already answered on this phone. Thank you! If you are answering for a different farm, go ahead.</div>';
+    }
+  } catch (e) {}
+})();
+</script>
+</body>
+</html>

@@ -49,6 +49,19 @@ Printed QR codes keep working because the name did not change.
 5. In the three stop pages, change `/afr/` to `/nfu/` in the line that starts with `try { window.goatcounter.count`, so scans are counted separately.
 6. Add a button for the new organization on the home page (`index.html`).
 
+## Grower survey
+
+`survey/` holds a four-question phone survey on whether growers received a settlement notice:
+https://williecade11.github.io/deere-optout/survey/
+
+| Path | What it is |
+|---|---|
+| `survey/index.html` | The survey page, with settlement definitions as footnotes and the AFR opt-out QR codes at the end. |
+| `survey/config.js` | Holds the Google Apps Script web app address that receives answers. |
+| `survey/apps-script/Code.gs` | The Google Apps Script: saves answers to a Google Sheet and emails a daily report at 6 AM Central. |
+| `survey/survey-qr.png` | QR code that opens the survey. |
+| `survey/SETUP.md` | One-time setup steps. |
+
 ## How to see visitor numbers
 
 Visits are counted by GoatCounter, which uses no cookies and collects no personal information.
