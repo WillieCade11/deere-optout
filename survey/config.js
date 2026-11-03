@@ -4,6 +4,6 @@
 // Leave the quotes in place. Example:
 //   SCRIPT_URL: "https://script.google.com/macros/s/AKfy.../exec",
 window.SURVEY_CONFIG = {
-  SCRIPT_URL: "",
+  SCRIPT_URL: "https://script.google.com/macros/s/AKfycbxOSJExLR0CnFb87vkS-owU6LyCLjyFrYLecOCj5kNTE5IgOxAcVUua-OIkYvPnG4-Z/exec",
   VERSION: "2026-11-03 v1.0"
 };
